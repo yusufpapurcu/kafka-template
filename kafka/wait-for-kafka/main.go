@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/segmentio/kafka-go"
+	kafka "github.com/segmentio/kafka-go"
 )
 
 // This script will try and connect to the topic leader within the timeout, else return an os.Exit(1).
@@ -18,9 +18,9 @@ func main() {
 		log.Fatal("missing KAFKA_ENDPOINT environment variable")
 	}
 
-	topic := os.Getenv("KAFKA_TOPICS_UNPROCESSED_PAYMENTS")
+	topic := os.Getenv("KAFKA_TOPIC")
 	if topic == "" {
-		log.Fatal("missing KAFKA_TOPICS_UNPROCESSED_PAYMENTS environment variable")
+		log.Fatal("missing KAFKA_TOPIC environment variable")
 	}
 
 	timeout := time.After(2 * time.Minute)
