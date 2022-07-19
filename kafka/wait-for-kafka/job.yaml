@@ -11,6 +11,6 @@ spec:
           env:
             - name: KAFKA_ENDPOINT
               value: kafka-headless.default.svc.cluster.local
-            - name: KAFKA_TOPICS_UNPROCESSED_PAYMENTS
-              value: settlements-isb-service-unprocessed-payments
+            - name: KAFKA_TOPIC
+              value: test-topic
       restartPolicy: Never
